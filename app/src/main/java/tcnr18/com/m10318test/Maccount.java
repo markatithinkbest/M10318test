@@ -171,6 +171,8 @@ public class Maccount extends Activity {
                 lblGroup.setVisibility(View.VISIBLE);
                 txtGroup.setVisibility(View.VISIBLE);
 
+                // *** EDIT ***
+                // http://tcnr18mark.er-webs.com/m_update.php?id=1&email=xxx@example.com&username=xxxyyy&gup=3&password=123
 
             } catch (JSONException e) {
                 e.printStackTrace();
