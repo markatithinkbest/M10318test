@@ -1,8 +1,8 @@
 package tcnr18.com.m10318test;
 
 public class Envir {
-	public static boolean eIsLogged=false;
-	public static String eActiveGroup="1"; 
+	//public static boolean eIsLogged=false;
+	public static String eActiveGroup="0";
 	
 	public static int id=999; 
 	public static String username="";

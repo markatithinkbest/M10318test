@@ -18,11 +18,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SyncService extends IntentService {
-	// ### NEED TO CHANGE TO YOUR DOMAIN
-	// final String LIST_URL = "http://opensource-forever.com/final/list.php";
-	// //Mark
-	// final String BASE_URL ="http://mamamag77.er-webs.com/list.php"; // Maggie
-
 	public final static String LOG_TAG = "markchen987";
 	static String oldRaw = "";
 
@@ -35,10 +30,10 @@ public class SyncService extends IntentService {
 		Log.d(LOG_TAG,
 				"... GOING TO FETCH DATA   ***********************************");
 		String raw = fetchCloudData();
-		// if (raw.equals(oldRaw)) {
-		// Log.d(LOG_TAG, "...%%% CONTENT NO CHANGE, NO NEED TO TOUCH SQLITE");
-		// return;
-		// }
+		if (raw.equals(oldRaw)) {
+		Log.d(LOG_TAG, "...%%% CONTENT NO CHANGE, NO NEED TO TOUCH SQLITE");
+		return;
+		}
 		//
 		// //
 		// oldRaw = raw;
@@ -47,7 +42,7 @@ public class SyncService extends IntentService {
 		updateSQLite(raw);
 	}
 
-	private String fetchCloudData() {
+	public String fetchCloudData() {
 		String result = null;
 		Log.d(LOG_TAG, "Starting sync");
 
@@ -56,12 +51,8 @@ public class SyncService extends IntentService {
 
 		// String forecastJsonStr = null;
 		try {
-			// final String BASE_URL =
-			String testing= "http://opensource-forever.com/final/list.php";
 
 			URL url = new URL(Common.LIST_URL);
-//			URL url = new URL(testing);
-
 			// Create the request to OpenWeatherMap, and open the connection
 			urlConnection = (HttpURLConnection) url.openConnection();
 			urlConnection.setRequestMethod("GET");
@@ -115,7 +106,7 @@ public class SyncService extends IntentService {
 		return result;
 	}
 
-	private void updateSQLite(String str) {
+	public void updateSQLite(String str) {
 		JSONArray jsonArray = null;
 		try {
 			jsonArray = new JSONArray(str);

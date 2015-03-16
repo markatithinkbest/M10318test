@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -67,25 +68,19 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
 //		if (Envir.eIsLogged) {
 //			updateSpinner();
 //		}
-        if (Envir.eIsLogged) {
-            updateSpinnerWithLiveData();
-        }
+//        if (Envir.eIsLogged) {
+//            updateSpinnerWithLiveData();
+//        }
+
     }
 
-    @Override
-    protected void onStart() {
-        // TODO Auto-generated method stub
-        Log.d(LOG_TAG, "onStart");
 
-        super.onStart();
-    }
 
     @Override
     protected void onResume() {
-        // TODO Auto-generated method stub
-        Log.d(LOG_TAG, "onResume");
         super.onResume();
-
+        startAlarmOneTime();
+        updateSpinner();
     }
 
 
@@ -119,7 +114,7 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
             return true;
         }
         if (id == R.id.menu2) {
-            Envir.eIsLogged = false;
+        //    Envir.eIsLogged = false;
 
             spinner.setAdapter(null);
             txt1.setText("1");
@@ -134,12 +129,8 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
             return true;
         }
         if (id == R.id.menu3) {
-
-            Toast.makeText(getApplicationContext(), "...menu3 ...",
-                    Toast.LENGTH_SHORT).show();
-
-            // UI Spinner with SQLite data
-            updateSpinner();
+            finish();
+            System.exit(0);
             return true;
         }
         if (id == R.id.menu4) {
@@ -250,6 +241,7 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
             tv = (TextView) view.findViewById(android.R.id.text2);
         }catch (Exception e){
             Log.d(LOG_TAG,"onItemSelected --- IS NULL  ");
+            return;
         }
 
         String spinnerEmail = tv.getText().toString();
@@ -293,4 +285,29 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    private class SyncDbAndRefreshSpinnerTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            // 1.fetch MySQL
+            // 2.update SQLite
+            // 3.refresh Spinner
+
+
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+    }
+
+
+
+
+
 }

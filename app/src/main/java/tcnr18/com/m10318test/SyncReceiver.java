@@ -13,7 +13,6 @@ public class SyncReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Intent sendIntent = new Intent(context, SyncService.class);
-        sendIntent.putExtra("something-to-deliver", "Hello, Android Service");
         context.startService(sendIntent);
     }
 }

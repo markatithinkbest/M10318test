@@ -81,7 +81,7 @@ public class Maccount extends Activity {
 		// method.setText("Get Method");
 		// new SigninActivity(this,status,role,0).execute(username,password);
 		
-		Envir.eIsLogged=false;
+		//Envir.eIsLogged=false;
 //		Envir.eActiveGroup=	gup;	
 		
 		new SigninActivity().execute(email, password);
@@ -137,7 +137,7 @@ public class Maccount extends Activity {
 
 		private void loginFailed() {
 
-            Envir.eIsLogged = false;
+          //  Envir.eIsLogged = false;
             status.setText(getString(R.string.login_failed));
 
 		}
@@ -185,7 +185,7 @@ public class Maccount extends Activity {
 				
 				etUsername.setText(username);
 				etGup.setText(gup);
-				Envir.eIsLogged=true;
+			//	Envir.eIsLogged=true;
 				Envir.eActiveGroup=	gup;
 
                 status.setText(getString(R.string.login_successfully));

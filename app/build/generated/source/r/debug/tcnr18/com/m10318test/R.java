@@ -21,10 +21,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int btnEdit=0x7f080018;
+        public static final int btnEdit=0x7f08001b;
         public static final int btnLogin=0x7f080014;
         public static final int email=0x7f080012;
-        public static final int gup=0x7f080017;
         public static final int lbl1=0x7f080001;
         public static final int lbl2=0x7f080003;
         public static final int lbl3=0x7f080005;
@@ -33,14 +32,16 @@ public final class R {
         public static final int lbl6=0x7f08000b;
         public static final int lbl7=0x7f08000d;
         public static final int lbl8=0x7f08000f;
-        public static final int menu1=0x7f080019;
-        public static final int menu2=0x7f08001a;
-        public static final int menu3=0x7f08001b;
-        public static final int menu4=0x7f08001c;
-        public static final int menu5=0x7f08001d;
+        public static final int lblGroup=0x7f080019;
+        public static final int lblStatus=0x7f080015;
+        public static final int lblUsername=0x7f080017;
+        public static final int menu1=0x7f08001c;
+        public static final int menu2=0x7f08001d;
+        public static final int menu3=0x7f08001e;
+        public static final int menu4=0x7f08001f;
+        public static final int menu5=0x7f080020;
         public static final int password=0x7f080013;
         public static final int spinner1=0x7f080000;
-        public static final int status=0x7f080015;
         public static final int txt1=0x7f080002;
         public static final int txt2=0x7f080004;
         public static final int txt3=0x7f080006;
@@ -49,7 +50,9 @@ public final class R {
         public static final int txt6=0x7f08000c;
         public static final int txt7=0x7f08000e;
         public static final int txt8=0x7f080010;
-        public static final int username=0x7f080016;
+        public static final int txtGroup=0x7f08001a;
+        public static final int txtStatus=0x7f080016;
+        public static final int txtUsername=0x7f080018;
         public static final int who=0x7f080011;
     }
     public static final class layout {
