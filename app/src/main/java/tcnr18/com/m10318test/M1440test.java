@@ -19,7 +19,6 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class M1440test extends Activity implements AdapterView.OnItemSelectedListener {
     // final String LOGIN_URL =
@@ -56,14 +55,14 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
         txt7 = (TextView) findViewById(R.id.txt7);
         txt8 = (TextView) findViewById(R.id.txt8);
 
-        txt1.setText("1");
-        txt2.setText("2");
-        txt3.setText("3");
-        txt4.setText("4");
-        txt5.setText("5");
-        txt6.setText("6");
-        txt7.setText("7");
-        txt8.setText("8");
+        txt1.setText("");
+        txt2.setText("");
+        txt3.setText("");
+        txt4.setText("");
+        txt5.setText("");
+        txt6.setText("");
+        txt7.setText("");
+        txt8.setText("");
 
 //		if (Envir.eIsLogged) {
 //			updateSpinner();
@@ -117,14 +116,14 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
         //    Envir.eIsLogged = false;
 
             spinner.setAdapter(null);
-            txt1.setText("1");
-            txt2.setText("2");
-            txt3.setText("3");
-            txt4.setText("4");
-            txt5.setText("5");
-            txt6.setText("6");
-            txt7.setText("7");
-            txt8.setText("8");
+            txt1.setText("");
+            txt2.setText("");
+            txt3.setText("");
+            txt4.setText("");
+            txt5.setText("");
+            txt6.setText("");
+            txt7.setText("");
+            txt8.setText("");
 
             return true;
         }
@@ -140,19 +139,7 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
             startActivity(browserIntent);
             return true;
         }
-        if (id == R.id.menu5) {
 
-            Toast.makeText(getApplicationContext(), "...debug ...",
-                    Toast.LENGTH_SHORT).show();
-
-            // start auto sync, MySQL -> SQLite
-            // startAlarmRepeating();
-            startAlarmOneTime();
-
-            // UI Spinner with SQLite data
-            updateSpinner();
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
