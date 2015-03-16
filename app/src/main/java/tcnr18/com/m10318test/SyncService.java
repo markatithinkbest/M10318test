@@ -155,7 +155,7 @@ public class SyncService extends IntentService {
 						.getString(MembersProvider.COLUMN_AUTHCODE);
 				String state = jsonObject
 						.getString(MembersProvider.COLUMN_STATE);
-				String gup = jsonObject.getString(MembersProvider.COLUMN_GUP);
+				String gup = jsonObject.getString(MembersProvider.COLUMN_GROUP);
 				String address1 = jsonObject
 						.getString(MembersProvider.COLUMN_ADDRESS1);
 				String address2 = jsonObject
@@ -165,13 +165,13 @@ public class SyncService extends IntentService {
 						 + "," + email + "," + gup);
 				ContentValues values = new ContentValues();
 
-				values.put(MembersProvider.COLUMN_MEMBERID, member_id);
+				values.put(MembersProvider.COLUMN_MEMBER_ID, member_id);
 				values.put(MembersProvider.COLUMN_USERNAME, username);
 				values.put(MembersProvider.COLUMN_PASSWORD, password);
 				values.put(MembersProvider.COLUMN_EMAIL, email);
 				values.put(MembersProvider.COLUMN_AUTHCODE, authcode);
 				values.put(MembersProvider.COLUMN_STATE, state);
-				values.put(MembersProvider.COLUMN_GUP, gup);
+				values.put(MembersProvider.COLUMN_GROUP, gup);
 				values.put(MembersProvider.COLUMN_ADDRESS1, address1);
 				values.put(MembersProvider.COLUMN_ADDRESS2, address2);
 				

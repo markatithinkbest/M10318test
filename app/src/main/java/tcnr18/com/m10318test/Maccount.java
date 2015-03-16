@@ -1,30 +1,27 @@
 package tcnr18.com.m10318test;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URL;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URL;
 
 public class Maccount extends Activity {
 	public final static String LOG_TAG = "markchen987";
@@ -45,18 +42,18 @@ public class Maccount extends Activity {
 		etPassword = (EditText) findViewById(R.id.password);
 		etUsername = (EditText) findViewById(R.id.username);
 		etGup = (EditText) findViewById(R.id.gup);
-			String strStatus = "";
-
-		if (Envir.eIsLogged) {
-			strStatus += "已登入" + Envir.email;
-			strStatus += " 組別為:" + Envir.eActiveGroup;
-
-		} else {
-			strStatus += "未登入";
-
-		}
-
-		status.setText(strStatus);
+//			String strStatus = "";
+//
+//		if (Envir.eIsLogged) {
+//			strStatus += "" + Envir.email;
+//			strStatus += " 嚙調別嚙踝蕭:" + Envir.eActiveGroup;
+//
+//		} else {
+//			strStatus += "嚙踝蕭嚙緯嚙皚";
+//
+//		}
+//
+//		status.setText(strStatus);
 	}
 
 	public void onClickLogin(View view) {
@@ -163,7 +160,7 @@ public class Maccount extends Activity {
 						.getString(MembersProvider.COLUMN_USERNAME);
 				String email = jsonObject
 						.getString(MembersProvider.COLUMN_EMAIL);
-				String gup = jsonObject.getString(MembersProvider.COLUMN_GUP);
+				String gup = jsonObject.getString(MembersProvider.COLUMN_GROUP);
 
 				Envir.id=member_id;
 				Envir.username=username;

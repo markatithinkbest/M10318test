@@ -50,13 +50,13 @@ public class MembersProvider extends ContentProvider {
 	private SQLiteDatabase sqlDB;
 
 	static final String COLUMN_ID = "_id"; // local ID
-	static final String COLUMN_MEMBERID = "member_id"; // remote ID
+	static final String COLUMN_MEMBER_ID = "member_id"; // remote ID
 	static final String COLUMN_USERNAME = "username";
 	static final String COLUMN_PASSWORD = "password";
 	static final String COLUMN_EMAIL = "email";
 	static final String COLUMN_AUTHCODE = "authcode";
 	static final String COLUMN_STATE = "state";
-	static final String COLUMN_GUP = "gup";
+	static final String COLUMN_GROUP = "gup";
 	static final String COLUMN_ADDRESS1 = "address1";
 	static final String COLUMN_ADDRESS2 = "address2";
 
@@ -66,10 +66,10 @@ public class MembersProvider extends ContentProvider {
 											// table structure
 	static final String CREATE_DB_TABLE = " CREATE TABLE " + TABLE_NAME + " ("
 			+ COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ COLUMN_MEMBERID + " INTEGER, " + COLUMN_USERNAME
+			+ COLUMN_MEMBER_ID + " INTEGER, " + COLUMN_USERNAME
 			+ " TEXT NOT NULL," + COLUMN_PASSWORD + " TEXT NOT NULL,"
 			+ COLUMN_EMAIL + " TEXT NOT NULL," + COLUMN_AUTHCODE
-			+ " TEXT NOT NULL," + COLUMN_STATE + " INTEGER," + COLUMN_GUP
+			+ " TEXT NOT NULL," + COLUMN_STATE + " INTEGER," + COLUMN_GROUP
 			+ " TEXT NOT NULL," + COLUMN_ADDRESS1 + " REAL," + COLUMN_ADDRESS2
 			+ " REAL"
 			+ ");";
