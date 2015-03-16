@@ -1,11 +1,11 @@
 package tcnr18.com.m10318test;
 
 public class Envir {
-	public static boolean eIsLogged=false; 
+	public static boolean eIsLogged=true;
 	public static String eActiveGroup="1"; 
 	
 	public static int id=999; 
-	public static String username="¤é¤ëª÷"; 
+	public static String username="XXX";
 	public static String password="1"; 
 	public static String email="1"; 
 	public static String authcode="1"; 

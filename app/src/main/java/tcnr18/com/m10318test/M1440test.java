@@ -1,15 +1,5 @@
 package tcnr18.com.m10318test;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URL;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -17,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -181,8 +170,8 @@ public class M1440test extends Activity {
 		startManagingCursor(mCursor);
 		SpinnerAdapter adapter = new SimpleCursorAdapter(this,
 				android.R.layout.simple_list_item_2, mCursor, new String[] {
-						MembersProvider.COLUMN_EMAIL,
-						MembersProvider.COLUMN_USERNAME }, new int[] {
+                MembersProvider.COLUMN_USERNAME,MembersProvider.COLUMN_EMAIL
+						 }, new int[] {
 						android.R.id.text1, android.R.id.text2 });
 
 		spinner.setAdapter(adapter);
