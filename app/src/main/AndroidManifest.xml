@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tcnr18.com.m10318test"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -19,11 +19,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".M1440test"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +38,6 @@
             android:enabled="true" />
 
 
-
         <provider
             android:name=".MembersProvider"
             android:authorities="@string/content_authority"
@@ -47,8 +46,7 @@
 
         <activity
             android:name=".Maccount"
-            android:label="@string/title_activity_maccount" >
-        </activity>
+            android:label="@string/title_activity_maccount"></activity>
     </application>
 
 </manifest>

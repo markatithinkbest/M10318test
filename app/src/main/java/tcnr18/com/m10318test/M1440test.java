@@ -120,7 +120,17 @@ public class M1440test extends Activity implements AdapterView.OnItemSelectedLis
         }
         if (id == R.id.menu2) {
             Envir.eIsLogged = false;
+
             spinner.setAdapter(null);
+            txt1.setText("1");
+            txt2.setText("2");
+            txt3.setText("3");
+            txt4.setText("4");
+            txt5.setText("5");
+            txt6.setText("6");
+            txt7.setText("7");
+            txt8.setText("8");
+
             return true;
         }
         if (id == R.id.menu3) {
