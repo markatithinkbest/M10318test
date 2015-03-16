@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">M10318test</string>
+    <string name="menu1">登入及編輯</string>
+    <string name="menu2">登出</string>
+    <string name="menu3">結束</string>
+    <string name="menu4">關於我</string>
+    <string name="menu5">...Debug</string>
+    <string name="content_authority">tcnr18.com.m10318test.MembersProvider</string>
+    <string name="lbl1">ID</string>
+    <string name="lbl2">用戶名</string>
+    <string name="lbl3">帳號</string>
+    <string name="lblpass">密碼</string>
+    
+    <string name="lbl4">驗証碼</string>
+    <string name="lbl5">狀態</string>
+    <string name="lbl6">群組</string>
+    <string name="lbl7">地址1</string>
+    <string name="lbl8">地址2</string>
+    <string name="title_activity_maccount">Maccount</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
