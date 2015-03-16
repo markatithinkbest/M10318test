@@ -7,12 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tcnr18.com.m10318test.M1440test" >
+    tools:context="tcnr18.com.m10318test.M1440test">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:text="@string/login_user" />
+
+        <TextView
+            android:id="@+id/who"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dip"
@@ -30,7 +50,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dip"
@@ -49,56 +69,78 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickLogin"
-        android:text="Login" />
-     <TextView
-          android:id="@+id/status"
-          android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-     
-            android:text="---" />
+        android:text="@string/btnLogin" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/lblStatus"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/lblStatus"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblUsername"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:text="@string/lbl2" />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/txtUsername"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="2"
             android:text="(not yet)" />
     </LinearLayout>
 
-     <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/lblGroup"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:text="@string/lbl6" />
 
         <EditText
-            android:id="@+id/gup"
+            android:id="@+id/txtGroup"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="2"
             android:text="(not yet)" />
     </LinearLayout>
 
-
-     
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEdit"
+        android:text="@string/btnEdit" />
 </LinearLayout>

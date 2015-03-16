@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,8 +26,9 @@ import java.net.URL;
 
 public class Maccount extends Activity {
 	public final static String LOG_TAG = "markchen987";
-	TextView status;
-	EditText etEmail;
+    TextView status;
+    TextView who;
+    EditText etEmail;
 	EditText etPassword;
 	EditText etUsername;
 	EditText etGup;
@@ -37,11 +39,15 @@ public class Maccount extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.maccount);
 
-		status = (TextView) findViewById(R.id.status);
-		etEmail = (EditText) findViewById(R.id.email);
+        setTitle(getString(R.string.menu1));
+        who = (TextView) findViewById(R.id.who);
+        status = (TextView) findViewById(R.id.txtStatus);
+        etEmail = (EditText) findViewById(R.id.email);
 		etPassword = (EditText) findViewById(R.id.password);
-		etUsername = (EditText) findViewById(R.id.username);
-		etGup = (EditText) findViewById(R.id.gup);
+		etUsername = (EditText) findViewById(R.id.txtUsername);
+		etGup = (EditText) findViewById(R.id.txtGroup);
+
+        who.setText(Envir.username);
 //			String strStatus = "";
 //
 //		if (Envir.eIsLogged) {
@@ -59,6 +65,14 @@ public class Maccount extends Activity {
 	public void onClickLogin(View view) {
 		String email = etEmail.getText().toString();
 		String password = etPassword.getText().toString();
+        status.setText("");
+        if (email.length()==0 || password.length()==0){
+            status.setText(getString(R.string.email_password_required));
+            return;
+        }
+
+
+
 		Toast.makeText(getApplicationContext(), " " + email + " " + password,
 				Toast.LENGTH_SHORT).show();
 		//
@@ -114,7 +128,7 @@ public class Maccount extends Activity {
 				Log.d(LOG_TAG, "##########" + sb.toString());
 				return sb.toString();
 			} catch (Exception e) {
-				Log.d(LOG_TAG, "####@#$%######?????????????????");
+				Log.d(LOG_TAG, "!@#$%exception "+e.toString());
 				return null;
 				// return new String("Exception: " + e.getMessage());
 			}
@@ -122,7 +136,10 @@ public class Maccount extends Activity {
 		}
 
 		private void loginFailed() {
-			Envir.eIsLogged = false;
+
+            Envir.eIsLogged = false;
+            status.setText(getString(R.string.login_failed));
+
 		}
 
 		@Override
@@ -169,19 +186,25 @@ public class Maccount extends Activity {
 				etUsername.setText(username);
 				etGup.setText(gup);
 				Envir.eIsLogged=true;
-				Envir.eActiveGroup=	gup;			
-				
+				Envir.eActiveGroup=	gup;
+
+                status.setText(getString(R.string.login_successfully));
+                Button btn=(Button)findViewById(R.id.btnLogin);
+
+                btn.setVisibility(View.GONE);
+                status.setVisibility(View.GONE);
+
 				// logged.setText(username);
 				// grpId.setText(grp);
-
-				int cnt = getContentResolver().delete(
-						MembersProvider.CONTENT_URL, "", null);
-				Log.d(LOG_TAG, "just update grp ,delete cnt= " + cnt);
-
-				// updateSpinner();
-
-				Log.d(LOG_TAG, "===> " + member_id + "," + username + "," + ","
-						+ email + "," + gup);
+//
+//				int cnt = getContentResolver().delete(
+//						MembersProvider.CONTENT_URL, "", null);
+//				Log.d(LOG_TAG, "just update grp ,delete cnt= " + cnt);
+//
+//				// updateSpinner();
+//
+//				Log.d(LOG_TAG, "===> " + member_id + "," + username + "," + ","
+//						+ email + "," + gup);
 
 			} catch (JSONException e) {
 				e.printStackTrace();
